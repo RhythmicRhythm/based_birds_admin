@@ -1,0 +1,84 @@
+#app {
+  background: #000;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+}
+
+#wrapper {
+  text-align: center;
+}
+
+.sub {
+  color: #2eaa9b;
+  letter-spacing: 1em;
+}
+
+.glitch {
+  position: relative;
+  color: #fff;
+}
+.glitch-bend {
+  transform: rotate(45deg);
+  color: rgb(51, 255, 221);
+  animation: flicker 0.5s ease-in-out infinite alternate;
+}
+
+
+
+@keyframes flicker {
+  0% {
+    opacity: 0.5;
+    color: #2eaa9b;
+  }
+  100% {
+    opacity: 1;
+    color: #2eaa9b;
+  }
+}
+
+.loader_container {
+  margin: 100px auto;
+  width: 500px;
+  text-align: center;
+}
+.progress {
+  padding: 6px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25),
+    0 1px rgba(255, 255, 255, 0.08);
+}
+
+.progress-bar {
+  height: 18px;
+  background-color: #ee303c;
+  border-radius: 4px;
+  transition: 0.4s linear;
+  transition-property: width, background-color;
+}
+
+.progress-striped .progress-bar {
+  background-color: #fcbc51;
+  width: 100%;
+  background-image: linear-gradient(#ffffff, #8afdff);
+  animation: progressAnimationStrike 4s;
+}
+
+@keyframes progressAnimationStrike {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}

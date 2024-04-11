@@ -1,0 +1,109 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+@font-face {
+  font-family: vbc;
+  src: url("./assets/PixelHour.ttf");
+}
+
+@font-face {
+  font-family: normal;
+  src: url("./assets/PixelicWar.ttf");
+}
+
+.sec_font{
+  font-family: normal;
+}
+body{
+    font-family: vbc;
+    animation: scroll 100s linear infinite;
+    background: url("https://images.unsplash.com/photo-1465146633011-14f8e0781093?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80"),
+      #111111;
+    color: #eee;
+    height: 100vh;
+    min-width: 360px;
+    width: 100%;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+}
+.animate_bg{
+  
+}
+@keyframes scroll {
+  100% {
+    background-position: 0px -400%;
+  }
+}
+
+
+.text-shadow {
+  font-style: italic;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: #fff;
+  -webkit-text-stroke-width: 1px;
+  text-shadow: 2px 2px 10px #cccaca;
+  transition: all 0.5s ease-in-out;
+  text-align: center;
+  letter-spacing: 0.2em;
+  -webkit-animation: flicker 0.5s ease-in-out infinite alternate;
+          animation: flicker 0.5s ease-in-out infinite alternate;
+}
+.text-shadow:hover {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .tags small {
+    font-size: 0.5em;
+  }
+}
+
+@-webkit-keyframes flicker {
+  0% {
+    opacity: 0.5;
+    text-shadow: 2px 2px 10px #bdbdbd;
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 2px 2px 20px #88888a;
+  }
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.5;
+    text-shadow: 2px 2px 10px #b3b4b6;
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 2px 2px 20px #abadb1;
+  }
+}
+
+.r_animate{
+   
+    animation: exampleAnimation 2s ease infinite;
+}
+
+@keyframes exampleAnimation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
