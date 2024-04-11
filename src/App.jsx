@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 import WalletChecker from "./pages/WalletChecker";
 import Tasks from "./pages/Tasks";
 import Entries from "./pages/Entries";
-
+import Loader from "./pages/Loader";
 export const UserContext = createContext({});
 
 function App() {

@@ -4,6 +4,7 @@ import { Toaster, toast } from "react-hot-toast";
 import axios from "axios";
 import { CSVLink } from "react-csv";
 import ReactPaginate from "react-paginate";
+import Loader from "./Loader";
 
 const Entries = () => {
   const [data, setData] = useState([]);
@@ -12,12 +13,6 @@ const Entries = () => {
   const itemsPerPage = 50;
 
   const [loading, setLoading] = useState(true);
-
-  const [looading, setLooading] = useState(false);
-
-  const [lading, setLading] = useState(false);
-
-  const [searchResult, setSearchResult] = useState(null);
 
   useEffect(() => {
     async function getCoursesData() {
@@ -64,19 +59,16 @@ const Entries = () => {
     ]),
   ];
 
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
-    <div className="animate_bg">
+    <div className="">
       <Toaster />
 
       <div className="mt-24">
-        {loading ? (
-          <div className="flex h-screen justify-center items-center">
-            <h1 className="text-2xl sm:text-6xl h_animate text-white font-bold">
-              {" "}
-              Admin List Loading ...
-            </h1>
-          </div>
-        ) : (
+      
           <div className="px-4">
             <div className="mx-auto flex max-w-[700px] justify-center items-center px-2">
               <div className="flex w-full flex-col items-center mt-10">
@@ -166,7 +158,7 @@ const Entries = () => {
               </div>
             </div>
           </div>
-        )}
+      
       </div>
     </div>
   );
